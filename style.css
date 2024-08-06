@@ -32,7 +32,9 @@ nav {
   height: 50px;
   background-color: rgba(255, 255, 255, 0);
   z-index: 987;
-  backdrop-filter: blur(10px); /* Adjust the blur radius */
+  /* backdrop-filter: blur(10px); Adjust the blur radius */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
 }
 nav .logo {
   display: flex;
@@ -212,7 +214,7 @@ nav ul li a:hover {
   .devzur_landing-page{
     padding: 10px;
   }
-}
+
 @media(max-width:1050px){
   .landing-p-text {
     text-align: center;
@@ -295,18 +297,22 @@ p {
 /* menu item styles start */
 
 .devzur_menu-item-container {
-  width: 221px;
+  width: 220px;
   align-items: center;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #f6d365;
   /* padding: 10px; */
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.153);
   margin: 10px;
+  border-radius: 15px;
 }
 .menu-item-img img {
   width: 220px;
   margin: 0%;
   padding: 0%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .menu-item-details {
   display: flex;
@@ -331,8 +337,21 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
-
+.menu-item-container-flex{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  justify-content: start; /* Align items at the start */
+  max-width: 100%; /* Limit to the device width */
+}
+.menu-item-container-flex::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
 /* menu item styles end */
 
 /* footer css start */

@@ -45,7 +45,14 @@ function moveRight() {
 
 
 
-
+document.querySelector('.menu-item-container-flex').addEventListener('wheel', function(e) {
+  if (e.deltaY > 0) {
+    this.scrollLeft += 100;
+  } else {
+    this.scrollLeft -= 100;
+  }
+  e.preventDefault();
+});
 
 
 
